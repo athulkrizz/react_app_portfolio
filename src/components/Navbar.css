@@ -1,0 +1,126 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+.navbar .p-toolbar {
+    border-radius: 3rem !important;
+    padding: 1rem 1.5rem !important;
+    box-shadow: none !important;
+    /* box-shadow: 0 2px 8px rgba(11, 11, 69, 0.08) !important; */
+}
+
+:host .p-toolbar {
+    box-shadow: none;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-height);
+}
+
+.navbar-logo {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.navbar-logo:hover {
+    opacity: 0.7;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: var(--font-weight-normal);
+    transition: opacity 0.2s;
+    position: relative;
+}
+
+.nav-link:hover {
+    opacity: 0.6;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+}
+
+.mobile-menu-toggle button {
+    color: var(--text-primary) !important;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    z-index: 1002;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: -2px 0 10px rgba(11, 11, 69, 0.1);
+}
+
+.mobile-sidebar-close {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mobile-sidebar-close button {
+    color: var(--text-primary) !important;
+}
+
+.mobile-nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-normal);
+    padding: 0.5rem 0;
+    transition: opacity 0.2s;
+}
+
+.mobile-nav-link:hover {
+    opacity: 0.6;
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(11, 11, 69, 0.3);
+    z-index: 1001;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+}

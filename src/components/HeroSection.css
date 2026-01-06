@@ -1,0 +1,259 @@
+.hero-section {
+    /* min-height: 100vh; */
+    min-height: calc(100vh + 80px);
+    display: flex;
+    align-items: center;
+    /* padding-top: var(--nav-height); */
+    background-color: var(--bg-color);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-content {
+    font-family: 'Poltawski Nowy', serif;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.hero-name {
+    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+
+.hero-resume-button {
+    background-color: transparent !important;
+    border: 1.5px solid transparent !important;
+    /* Hide default border but keep spacing */
+    color: #2d2d2d !important;
+    font-weight: 500 !important;
+    padding: 0.75rem 2.5rem !important;
+    border-radius: 8px !important;
+    font-size: 1.1rem !important;
+    position: relative !important;
+    overflow: visible !important;
+    /* Allow offset background to be seen */
+    isolation: isolate;
+    margin-top: 1rem;
+    transition: all 0.2s ease !important;
+}
+
+/* Create border on pseudo-element to control z-index */
+.hero-resume-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid #2d2d2d;
+    border-radius: 8px;
+    z-index: 2;
+    /* Sits above the yellow offset */
+    pointer-events: none;
+    /* Ensure clicks pass through */
+    transition: border-color 0.2s ease;
+}
+
+/* Ensure label is visible on top of everything */
+.hero-resume-button .p-button-label {
+    position: relative;
+    z-index: 3;
+    font-weight: 500;
+}
+
+/* Offset yellow background */
+.hero-resume-button::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    z-index: 1;
+    /* Sits behind the border (z-index 2) */
+    transition: all 0.2s ease;
+}
+
+.hero-resume-button:hover {
+    background-color: var(--accent-color) !important;
+    transform: translate(2px, 2px);
+}
+
+.hero-resume-button:hover::before {
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* Image Container */
+.hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.hero-decorative-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.line {
+    position: absolute;
+    background-color: var(--text-primary);
+    opacity: 0.15;
+}
+
+.line-1 {
+    width: 2px;
+    height: 200px;
+    top: 50px;
+    left: 20%;
+    transform: rotate(15deg);
+}
+
+.line-2 {
+    width: 150px;
+    height: 2px;
+    top: 40%;
+    right: 10%;
+}
+
+.line-3 {
+    width: 2px;
+    height: 180px;
+    bottom: 80px;
+    right: 25%;
+    transform: rotate(-20deg);
+}
+
+.hero-profile-circle {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: rgba(11, 11, 69, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-placeholder {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color) 0%, rgba(235, 235, 123, 0.5) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    color: var(--text-primary);
+    opacity: 0.3;
+}
+
+button div {
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-profile-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .profile-placeholder {
+        width: 250px;
+        height: 250px;
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-resume-button {
+        margin: 0 auto;
+    }
+
+    .hero-image-container {
+        height: 400px;
+    }
+
+    .hero-profile-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile-placeholder {
+        width: 200px;
+        height: 200px;
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-image-container {
+        height: 300px;
+    }
+
+    .hero-profile-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile-placeholder {
+        width: 160px;
+        height: 160px;
+        font-size: 4rem;
+    }
+}
+
+/* button label {
+  color: red;
+  font-weight: bold;
+  z-index: 9999;
+} */

@@ -1,0 +1,199 @@
+:root {
+  /* Figma Design Colors */
+  --bg-color: #FDFDDF;
+  --text-primary: #0B0B45;
+  --text-secondary: #4B4B0B;
+  --accent-color: #EBEB7B;
+  --accent-secondary: #4B4B0B;
+  --nav-height: 80px;
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-hero: 4rem;
+  --font-size-h1: 3rem;
+  --font-size-h2: 2.5rem;
+  --font-size-body: 1rem;
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  font-weight: var(--font-weight-normal);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  /* margin: 0 auto; */
+  padding: 0 2rem;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-primary);
+  border-radius: 4px;
+  opacity: 0.3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.5;
+}
+
+/* PrimeReact Component Overrides */
+/* Toolbar */
+.p-toolbar {
+  background: var(--bg-color) !important;
+  /* border: 1px solid rgba(11, 11, 69, 0.1) !important; */
+  color: var(--text-primary) !important;
+  border: none !important;
+}
+
+/* Button */
+.p-button {
+  background: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--text-primary) !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+
+.p-button:hover {
+  background: #d4d45f !important;
+  border-color: #d4d45f !important;
+}
+
+.p-button.p-button-text {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border: none !important;
+}
+
+.p-button.p-button-text:hover {
+  background: rgba(11, 11, 69, 0.05) !important;
+}
+
+/* Avatar */
+.p-avatar {
+  background-color: var(--accent-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Input fields */
+.p-inputtext {
+  background: var(--bg-color) !important;
+  border-color: rgba(11, 11, 69, 0.2) !important;
+  color: var(--text-primary) !important;
+}
+
+.p-inputtext:focus {
+  border-color: var(--text-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(11, 11, 69, 0.1) !important;
+}
+
+/* Dropdown */
+.p-dropdown {
+  background: var(--bg-color) !important;
+  border-color: rgba(11, 11, 69, 0.2) !important;
+  color: var(--text-primary) !important;
+}
+
+.p-dropdown-panel {
+  background: var(--bg-color) !important;
+  border-color: rgba(11, 11, 69, 0.2) !important;
+}
+
+.p-dropdown-item {
+  color: var(--text-primary) !important;
+}
+
+.p-dropdown-item:hover {
+  background: rgba(235, 235, 123, 0.2) !important;
+}
+
+/* Menu/Sidebar */
+.p-menu {
+  background: var(--bg-color) !important;
+  border-color: rgba(11, 11, 69, 0.1) !important;
+}
+
+.p-menuitem-link {
+  color: var(--text-primary) !important;
+}
+
+.p-menuitem-link:hover {
+  background: rgba(235, 235, 123, 0.2) !important;
+}
+
+/* Dialog */
+.p-dialog {
+  background: var(--bg-color) !important;
+  border: 1px solid rgba(11, 11, 69, 0.1) !important;
+}
+
+.p-dialog-header {
+  background: var(--bg-color) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid rgba(11, 11, 69, 0.1) !important;
+}
+
+.p-dialog-content {
+  background: var(--bg-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Card */
+.p-card {
+  background: var(--bg-color) !important;
+  border: 1px solid rgba(11, 11, 69, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Panel */
+.p-panel {
+  background: var(--bg-color) !important;
+  border: 1px solid rgba(11, 11, 69, 0.1) !important;
+}
+
+.p-panel-header {
+  background: var(--bg-color) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid rgba(11, 11, 69, 0.1) !important;
+}
+
+.p-divider-horizontal:before {
+  border-block-start:  1px solid rgba(11, 11, 69, 0.1);
+}

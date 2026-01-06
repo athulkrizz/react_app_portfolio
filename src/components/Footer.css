@@ -1,0 +1,10 @@
+.contact-footer {
+    padding: 3rem 0 3rem 0;
+    border-top: 1px solid rgba(11, 11, 69, 0.1);
+    text-align: center;
+}
+
+.contact-footer p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
