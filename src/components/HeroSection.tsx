@@ -5,12 +5,27 @@ import { useGSAP } from '@gsap/react';
 import './HeroSection.css';
 import ParticleNetwork from './ParticleNetwork';
 import { Divider } from 'primereact/divider';
+import { SplitText } from 'gsap/SplitText';
 
 const HeroSection = () => {
     const containerRef = useRef<HTMLElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
 
     useGSAP(() => {
+        const heroSplitText = new SplitText(".hero-name", { type: 'chars' });
+
+        gsap.from(heroSplitText.chars, {
+            opacity: 0,
+            duration: 0.01,
+            stagger: {
+                each: 0.1,
+                from: "start"
+            },
+            ease: "none",
+            repeat: -1,
+            repeatDelay: 1
+        });
+
         const tl = gsap.timeline();
 
         // Initial setup
@@ -40,65 +55,35 @@ const HeroSection = () => {
                 duration: 0.3,
                 ease: 'back.out(2)'
             }, "-=0.2")
-            // .to('.hero-profile-circle', {
-            //     scale: 1,
-            //     opacity: 1,
-            //     duration: 0.5,
-            //     ease: 'elastic.out(1, 0.5)'
-            // }, "-=0.3")
-            // .to('.line', {
-            //     scaleY: 1,
-            //     duration: 0.6,
-            //     stagger: 0.1,
-            //     ease: 'power4.inOut'
-            // }, "-=0.4");
 
     }, { scope: containerRef });
 
     return (
         <>
-        <section id="home" className="hero-section" ref={containerRef}>
-            <ParticleNetwork particleColor="rgba(45, 45, 45, 0.25)" lineColor="rgba(45, 45, 45)" />
-            <div className="main-container" style={{ position: 'relative', zIndex: 1 }}>
-                <div className="container hero-container">
-                    <div className="hero-content">
-                        <div>
-                            <div className="hero-name">
-                                Hi, I'm Athul Krishnan UG,
+            <section id="home" className="hero-section" ref={containerRef}>
+                <ParticleNetwork particleColor="rgba(45, 45, 45, 0.25)" lineColor="rgba(45, 45, 45)" />
+                <div className="main-container" style={{ position: 'relative', zIndex: 1 }}>
+                    <div className="hero-name">Hi, I'm Athul Krishnan UG,</div>
+                    <div className="container hero-container">
+                        <div className="hero-content">
+                            <div>
+                                <h1 className="hero-title" ref={titleRef}>
+                                    {/* Split text for animation granular control if needed, passing spans manually since we don't have SplitText plugin */}
+                                    <span>Software  Developer</span>
+                                </h1>
                             </div>
-                            <h1 className="hero-title" ref={titleRef}>
-                                {/* Split text for animation granular control if needed, passing spans manually since we don't have SplitText plugin */}
-                                <span style={{ display: 'inline-block' }}>Software</span><br />
-                                <span style={{ display: 'inline-block' }}>Developer</span>
-                            </h1>
+                            <Button
+                                label="RESUME   "
+                                className="hero-resume-button"
+                                onClick={() => window.open('/resume.pdf', '_blank')}
+                            >
+                                <div>Resume</div>
+                            </Button>
                         </div>
-
-                        <Button
-                            label="RESUME   "
-                            className="hero-resume-button"
-                            onClick={() => window.open('/resume.pdf', '_blank')}
-                        >
-                            <div>Resume</div>
-                        </Button>
                     </div>
-
-                    {/* <div className="hero-image-container">
-                        <div className="hero-decorative-lines">
-                            <div className="line line-1"></div>
-                            <div className="line line-2"></div>
-                            <div className="line line-3"></div>
-                        </div>
-
-                        <div className="hero-profile-circle">
-                            <div className="profile-placeholder">
-                                <i className="pi pi-user"></i>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
-            </div>
-        </section>
-        <Divider />
+            </section>
+            <Divider />
         </>
     );
 };

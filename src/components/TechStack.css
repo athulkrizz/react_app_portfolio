@@ -1,5 +1,5 @@
-.tech-stack {
-    padding: 3rem 0;
+.skill-container {
+    padding: 6rem 0;
     background-color: var(--bg-color);
     /* border-top: 1px solid rgba(11, 11, 69, 0.1);
     border-bottom: 1px solid rgba(11, 11, 69, 0.1); */
@@ -36,7 +36,7 @@
 }
 
 .tech-item:hover {
-    background-color: var(--accent-color);
+    /* background-color: var(--accent-color); */
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }

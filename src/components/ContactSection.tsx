@@ -1,11 +1,14 @@
+import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import './ContactSection.css';
 
 const ContactSection = () => {
     const socialLinks = [
-        { name: 'LinkedIn', icon: 'pi-linkedin', url: '#' },
-        { name: 'GitHub', icon: 'pi-github', url: '#' },
-        { name: 'Twitter', icon: 'pi-twitter', url: '#' },
-        { name: 'Instagram', icon: 'pi-instagram', url: '#' }
+        { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/athulkrishnan-ug' },
+        { name: 'GitHub', icon: <FaGithub />, url: 'https://github.com/athulkrizz' },
+        { name: 'Twitter', icon: <FaXTwitter />, url: 'https://x.com/athulkrizz08' },
+        { name: 'Instagram', icon: <FaInstagram />, url: 'https://www.instagram.com/athulkrizz' },
+        { name: 'Facebook', icon: <FaFacebook />, url: 'https://www.facebook.com/athulkrishnan-ug' }
     ];
 
     return (
@@ -16,24 +19,23 @@ const ContactSection = () => {
 
                     <div className="contact-content">
                         <div className="contact-email">
-                            <a href="mailto:athul@example.com">athulkrishnan.1108@gmail.com</a>
+                            <a href="mailto:athulkrishnan.1108@gmail.com">athulkrishnan.1108@gmail.com</a>
                         </div>
 
                         <div className="social-links">
                             {socialLinks.map((link) => (
                                 <a
+                                    target="_blank"
                                     key={link.name}
                                     href={link.url}
                                     className="social-link"
                                     aria-label={link.name}
                                 >
-                                    <i className={`pi ${link.icon}`}></i>
+                                    {link.icon}
                                 </a>
                             ))}
                         </div>
                     </div>
-
-                    
                 </div>
             </div>
         </section>

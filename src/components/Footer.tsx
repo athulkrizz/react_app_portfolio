@@ -3,7 +3,8 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="contact-footer">
-            <p>© 2025 Athul Krishnan. All rights reserved.</p>
+            <span>Made with <i className="pi pi-heart"></i> by Athul Krishnan using Google Antigravity and React.</span>
+            <span>© 2025 Athul Krishnan. All rights reserved.</span>
         </div>
     )
 }

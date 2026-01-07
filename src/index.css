@@ -8,7 +8,9 @@
   --nav-height: 80px;
 
   /* Typography */
-  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-primary: 'Poppins', system-ui, -apple-system, sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+
   --font-size-hero: 4rem;
   --font-size-h1: 3rem;
   --font-size-h2: 2.5rem;

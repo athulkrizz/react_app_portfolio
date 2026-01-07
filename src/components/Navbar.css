@@ -114,6 +114,11 @@
     z-index: 1001;
 }
 
+.social-link {
+    height: 30px !important;
+    width: 30px !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .navbar-links {
