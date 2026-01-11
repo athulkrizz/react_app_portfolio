@@ -7,6 +7,9 @@
   --accent-secondary: #4B4B0B;
   --nav-height: 80px;
 
+  --border-color-primary: rgba(11, 11, 69, 0.2);
+  --border-color-subtle: rgba(11, 11, 69, 0.1);
+
   /* Typography */
   --font-primary: 'Poppins', system-ui, -apple-system, sans-serif;
   /* font-family: 'Poppins', sans-serif; */
@@ -17,6 +20,17 @@
   --font-size-body: 1rem;
   --font-weight-bold: 700;
   --font-weight-normal: 400;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0B0B45;
+  --text-primary: #FDFDDF;
+  --text-secondary: #EBEB7B;
+  --accent-color: #EBEB7B;
+  --accent-secondary: #FDFDDF;
+
+  --border-color-primary: rgba(255, 255, 255, 0.3);
+  --border-color-subtle: rgba(255, 255, 255, 0.15);
 }
 
 * {
@@ -32,6 +46,7 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   font-weight: var(--font-weight-normal);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -80,7 +95,7 @@ a:hover {
 /* Toolbar */
 .p-toolbar {
   background: var(--bg-color) !important;
-  /* border: 1px solid rgba(11, 11, 69, 0.1) !important; */
+  /* border: 1px solid var(--border-color-subtle) !important; */
   color: var(--text-primary) !important;
   border: none !important;
 }
@@ -117,25 +132,25 @@ a:hover {
 /* Input fields */
 .p-inputtext {
   background: var(--bg-color) !important;
-  border-color: rgba(11, 11, 69, 0.2) !important;
+  border-color: var(--border-color-primary) !important;
   color: var(--text-primary) !important;
 }
 
 .p-inputtext:focus {
   border-color: var(--text-primary) !important;
-  box-shadow: 0 0 0 0.2rem rgba(11, 11, 69, 0.1) !important;
+  box-shadow: 0 0 0 0.2rem var(--border-color-subtle) !important;
 }
 
 /* Dropdown */
 .p-dropdown {
   background: var(--bg-color) !important;
-  border-color: rgba(11, 11, 69, 0.2) !important;
+  border-color: var(--border-color-primary) !important;
   color: var(--text-primary) !important;
 }
 
 .p-dropdown-panel {
   background: var(--bg-color) !important;
-  border-color: rgba(11, 11, 69, 0.2) !important;
+  border-color: var(--border-color-primary) !important;
 }
 
 .p-dropdown-item {
@@ -149,7 +164,7 @@ a:hover {
 /* Menu/Sidebar */
 .p-menu {
   background: var(--bg-color) !important;
-  border-color: rgba(11, 11, 69, 0.1) !important;
+  border-color: var(--border-color-subtle) !important;
 }
 
 .p-menuitem-link {
@@ -163,13 +178,13 @@ a:hover {
 /* Dialog */
 .p-dialog {
   background: var(--bg-color) !important;
-  border: 1px solid rgba(11, 11, 69, 0.1) !important;
+  border: 1px solid var(--border-color-subtle) !important;
 }
 
 .p-dialog-header {
   background: var(--bg-color) !important;
   color: var(--text-primary) !important;
-  border-bottom: 1px solid rgba(11, 11, 69, 0.1) !important;
+  border-bottom: 1px solid var(--border-color-subtle) !important;
 }
 
 .p-dialog-content {
@@ -180,22 +195,22 @@ a:hover {
 /* Card */
 .p-card {
   background: var(--bg-color) !important;
-  border: 1px solid rgba(11, 11, 69, 0.1) !important;
+  border: 1px solid var(--border-color-subtle) !important;
   color: var(--text-primary) !important;
 }
 
 /* Panel */
 .p-panel {
   background: var(--bg-color) !important;
-  border: 1px solid rgba(11, 11, 69, 0.1) !important;
+  border: 1px solid var(--border-color-subtle) !important;
 }
 
 .p-panel-header {
   background: var(--bg-color) !important;
   color: var(--text-primary) !important;
-  border-bottom: 1px solid rgba(11, 11, 69, 0.1) !important;
+  border-bottom: 1px solid var(--border-color-subtle) !important;
 }
 
 .p-divider-horizontal:before {
-  border-block-start:  1px solid rgba(11, 11, 69, 0.1);
+  border-block-start: 1px solid var(--border-color-subtle);
 }

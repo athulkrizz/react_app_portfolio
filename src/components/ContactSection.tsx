@@ -1,6 +1,7 @@
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import './ContactSection.css';
+import { Divider } from 'primereact/divider';
 
 const ContactSection = () => {
     const socialLinks = [
@@ -12,33 +13,36 @@ const ContactSection = () => {
     ];
 
     return (
-        <section id="contact" className="contact-section">
-            <div className="main-container">
-                <div className="container contact-container">
-                    <h2 className="contact-heading">contact.</h2>
+        <>
+            <section id="contact" className="contact-section">
+                <div className="main-container">
+                    <div className="container contact-container">
+                        <h2 className="contact-heading">contact.</h2>
 
-                    <div className="contact-content">
-                        <div className="contact-email">
-                            <a href="mailto:athulkrishnan.1108@gmail.com">athulkrishnan.1108@gmail.com</a>
-                        </div>
+                        <div className="contact-content">
+                            <div className="contact-email">
+                                <a href="mailto:athulkrishnan.1108@gmail.com">athulkrishnan.1108@gmail.com</a>
+                            </div>
 
-                        <div className="social-links">
-                            {socialLinks.map((link) => (
-                                <a
-                                    target="_blank"
-                                    key={link.name}
-                                    href={link.url}
-                                    className="social-link"
-                                    aria-label={link.name}
-                                >
-                                    {link.icon}
-                                </a>
-                            ))}
+                            <div className="social-links">
+                                {socialLinks.map((link) => (
+                                    <a
+                                        target="_blank"
+                                        key={link.name}
+                                        href={link.url}
+                                        className="social-link"
+                                        aria-label={link.name}
+                                    >
+                                        {link.icon}
+                                    </a>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <Divider />
+        </>
     );
 };
 

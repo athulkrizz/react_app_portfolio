@@ -3,7 +3,7 @@ import Aura from '@primeuix/themes/aura';
 export const customTheme = {
     preset: Aura,
     options: {
-        darkModeSelector: false,
+        darkModeSelector: '[data-theme="dark"]',
         cssLayer: {
             name: 'primereact',
             order: 'tailwind-base, primereact, tailwind-utilities'

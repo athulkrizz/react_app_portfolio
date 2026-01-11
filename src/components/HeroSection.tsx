@@ -4,12 +4,19 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import './HeroSection.css';
 import ParticleNetwork from './ParticleNetwork';
+import { useTheme } from '../context/ThemeContext';
 import { Divider } from 'primereact/divider';
 import { SplitText } from 'gsap/SplitText';
 
 const HeroSection = () => {
     const containerRef = useRef<HTMLElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
+
+    const { theme } = useTheme();
+
+    // Setup colors based on theme
+    const particleColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.25)' : 'rgba(45, 45, 45, 0.25)';
+    const lineColor = theme === 'dark' ? 'rgba(255, 255, 255)' : 'rgba(45, 45, 45)';
 
     useGSAP(() => {
         const heroSplitText = new SplitText(".hero-name", { type: 'chars' });
@@ -61,7 +68,7 @@ const HeroSection = () => {
     return (
         <>
             <section id="home" className="hero-section" ref={containerRef}>
-                <ParticleNetwork particleColor="rgba(45, 45, 45, 0.25)" lineColor="rgba(45, 45, 45)" />
+                <ParticleNetwork particleColor={particleColor} lineColor={lineColor} />
                 <div className="main-container" style={{ position: 'relative', zIndex: 1 }}>
                     <div className="hero-name">Hi, I'm Athul Krishnan UG,</div>
                     <div className="container hero-container">

@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.tsx'
 import { PrimeReactProvider } from "@primereact/core";
 import { customTheme } from './theme';
+import { ThemeProvider } from './context/ThemeContext';
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <PrimeReactProvider theme={customTheme}>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </PrimeReactProvider>
   </StrictMode>,
 )
